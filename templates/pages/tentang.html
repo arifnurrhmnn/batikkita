@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="banner mb-5">
+    <style>
+        .banner #img-banner {
+            background-image: url("{% static 'assets/images/banner.jpg' %}");
+        }
+    </style>
+    <div class="container-fluid" id="img-banner">
+        <div class="container-fluid" id="title-banner">
+            <h1>TENTANG</h1>
+            <p>Beranda > <span><a href="#">Tentang</a></span></p>
+        </div>
+    </div>
+</div>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-7 align-self-center">
+                <h2 class="fw-bold mb-4">Apa Itu BATIK KITA ?</h2>
+                <p>BATIK KITA merupakan sebuah website yang mempunyai fitur untuk mengklasifikasi motif batik. Dengan
+                    mengimplementasikan teknologi machine learning, pengguna bisa mencari informasi batik dari gambar
+                    motif batik. Nantinya pengguna hanya mengupload salah satu gambar batik, nanti sistem akan memproses
+                    gambar tersebut dan menampilkan informasi dari gambar tersebut.</p>
+                <p>Selain itu di dalam website ini juga terdapat menu motif yang berisi beberapa motif-motif batik yang
+                    ada di Indonesia. Pengguna bisa lebih mengenal lebih jauh lagi tentang keragaman motif batik yang
+                    ada di indonesia.</p>
+                <p>Semoga website ini bisa bermanfaat kepada semuanya.</p>
+            </div>
+            <div class="col-md-12 col-lg-5 align-self-center text-center p-5">
+                <img src="{% static 'assets/images/about.jpg' %}" id="img-about">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

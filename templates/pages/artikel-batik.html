@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="banner mb-5">
+    <style>
+        .banner #img-banner {
+            background-image: url("{% static 'assets/images/banner.jpg' %}");
+        }
+    </style>
+    <div class="container-fluid" id="img-banner">
+        <div class="container-fluid" id="title-banner">
+            <h1>Motif Batik</h1>
+            <p>Beranda > Motif Batik > <span><a href="#">{{ motif_batik.nama }}</a></span></p>
+        </div>
+    </div>
+</div>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="judul">
+                    <h1 class="fw-bold">{{ motif_batik.nama }}</h1>
+                </div>
+                <hr width="20%" align="left" style="border: 2px solid #4F4F4F;">
+                <div class="sub mb-3">
+                    Penulis : <span id="penulis">Admin</span> | <i class="uil uil-schedule"></i> 12
+                    Februari 2021
+                </div>
+                <div class="img-artikel">
+                    {% if motif_batik.gambar %}
+                    <img src="{{ motif_batik.gambar.url }}" alt="" width="100%" height="430px">
+                    {% endif %}
+                </div>
+                <div class="artikel mt-5">
+                    {% autoescape off %}
+                    {{ motif_batik.artikel }}
+                    {% endautoescape %}
+                </div>
+            </div>
+
+            <div class="col-lg-4 mt-5">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="fw-bold">Motif Lainya</h2>
+                        <hr align="left" width="20%" style="border: 2px solid #4F4F4F;">
+                    </div>
+                </div>
+                {% for motif in motif_batik_lainnya %}
+                <div class="row mb-4">
+                    <div class="col-4">
+                        {% if motif.gambar %}
+                        <img src="{{ motif.gambar.url }}" id="img-sidebar" width="100%" height="430px">
+                        {% endif %}
+                    </div>
+                    <div class="col-8">
+                        <p class="fw-bold">{{ motif.nama }}</p>
+                        <p>
+                            {% autoescape off %}
+                            {{ motif.artikel | truncatechars:45 }}
+                            {% endautoescape %}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

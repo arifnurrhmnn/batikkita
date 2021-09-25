@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="banner mb-5">
+    <style>
+        .banner #img-banner {
+            background-image: url("{% static 'assets/images/banner.jpg' %}");
+        }
+    </style>
+    <div class="container-fluid" id="img-banner">
+        <div class="container-fluid" id="title-banner">
+            <h1>MOTIF BATIK</h1>
+            <p>Beranda > <span><a href="#">Motif Batik</a></span></p>
+        </div>
+    </div>
+</div>
+
+<section>
+    <div class="container">
+        <div class="row">
+            {% for motif in motif_batik %}
+            <div class="col-md-6 col-lg-6 col-xl-4 mb-4 card-motif">
+                <a href="{% url 'artikel_batik' motif.id %}" id="custom-card">
+                    <div class="card" id="card-batik">
+                        {% if motif.gambar %}
+                        <img src="{{ motif.gambar.url }}" alt="img" class="card-img-top" id="img-card-batik">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">{{ motif.nama }}</h5>
+                            <div class="card-text text-dark">
+                                {% autoescape off %}
+                                {{ motif.artikel | truncatechars:85 }}
+                                {% endautoescape %}
+                            </div>
+                            <span id="card-date">18 Februari 2021</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

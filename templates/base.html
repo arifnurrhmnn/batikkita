@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- memanggil directori static -->
+    {% load static %}
+    <link
+      rel="shortcut icon"
+      href="{% static 'assets/images/logo-favicon.png' %}"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="{% static 'vendor/bootstrap-5/css/bootstrap.min.css' %}"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+    <!-- Font Poppins-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Iconscout -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+
+    <title>Batik Kita</title>
+  </head>
+
+  <body>
+    <header>{% include 'header.html' %}</header>
+
+    <main>{% block content %}{% endblock %}</main>
+
+    <footer>
+      {% include 'footer.html' %}
+
+      <!-- Bootstrap Bundle with Popper -->
+      <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+      <script src="{% static 'vendor/bootstrap-5/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'assets/js/function.js' %}"></script>
+      <script src="{% static 'fontawesome/js/all.js' %}"></script>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="banner mb-5">
+    <style>
+        .banner #img-banner {
+            background-image: url("{% static 'assets/images/banner.jpg' %}");
+        }
+    </style>
+    <div class="container-fluid" id="img-banner">
+        <div class="container-fluid" id="title-banner">
+            <h1>HASIL KLASIFIKASI MOTIF BATIK</h1>
+            <p>Beranda > Klasifikasi > <span><a href="#">Hasil Klasifikasi</a></span></p>
+        </div>
+    </div>
+</div>
+
+<section>
+    <div class="result container">
+        <div class="card mb-3">
+            <div class="card-header text-center text-capitalize">
+                <h3>{{ motif_batik.nama }}</h3>
+                <!-- <h5>Skor Akurasi : {{ akurasi }}%</h5> -->
+            </div>
+            <!-- <img src="{{ motifs.gambar }}" class="card-img-top p-3" alt=""> -->
+            {% if motif_batik.gambar %}
+            <img src="{{ motif_batik.gambar.url }}" class="card-img-top p-3" alt="" id="img-hasil">
+            {% endif %}
+            <div class="card-body">
+                <div class="card-text">
+                    {% autoescape off %}
+                    {{ motif_batik.artikel | truncatechars:170 }}
+                    {% endautoescape %}
+                </div>
+                <a href="{% url 'artikel_batik' motif_batik.id %}" class="btn">Selengkapnya</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

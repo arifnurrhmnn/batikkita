@@ -1,0 +1,91 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+  padding: 0px;
+  margin: 0px;
+  box-shadow: 0px 2px 5px grey;
+}
+
+.navbar-nav li a {
+  font-size: 17px;
+  /* font-weight: bold; */
+  padding: 15px 30px !important;
+}
+
+.navbar-light .navbar-nav .nav-item .nav-link {
+  color: #ff9333;
+}
+
+.navbar-light .navbar-nav .nav-item .nav-link:hover {
+  color: #3c220b;
+}
+
+@media (max-width: 1200px) {
+  .navbar-nav li {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-toggler {
+    margin: 10px 0px 10px 30px;
+  }
+}
+
+/* Banner */
+/* Section Upload */
+.dropzone-wrapper {
+  border: 2px dashed #ffb676;
+  color: #828282;
+  position: relative;
+  height: auto;
+  min-height: 250px;
+  background-color: white;
+  border-radius: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.dropzone,
+.dropzone:focus {
+  position: absolute;
+  outline: none !important;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.dropzone-wrapper:hover {
+  background: #fff8f0;
+}
+
+.preview-zone {
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+
+#icon-upload {
+  font-size: 100px;
+  color: #ffb676;
+}
+
+.btn {
+  background-color: #ff9333;
+  color: white;
+  border-radius: 8px;
+  padding-left: 40px;
+  padding-right: 40px;
+  box-shadow: 1px 2px 5px rgba(155, 155, 155, 0.611);
+}
+
+.btn:hover {
+  background-color: #e4832f;
+  color: white;
+  padding-left: 40px;
+  padding-right: 40px;
+}

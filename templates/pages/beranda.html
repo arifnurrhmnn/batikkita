@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<section>
+    <div class="container-fluid p-0" id="jumbotron">
+        <img src="{% static 'assets/images/carousel.jpg' %}" alt="" class="img-jumbotron">
+    </div>
+</section>
+
+<section>
+    <div class="container" id="section-classify">
+        <div class="row">
+            <div class="col-md-6 col-lg-6 col-xl-6 text-center align-self-center mt-5 mb-5" id="classify-left">
+                <img src="{% static 'assets/images/artificial_intelligence.png' %}" alt="" id="img-classification">
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-6 align-self-center">
+                <h1 class="fw-bold mb-4">KLASIFIKASI</h1>
+                <p>Dengan mengimplementasikan teknologi machine learning ke dalam website ini. Kamu dapat melakukan
+                    pencarian informasi batik dari gambar motif batik.</p>
+                <p>Kamu tinggal menggunggah gambar motif batik saja. Nanti sistem akan memproses dan menampilkan
+                    informasi dari gambar tersebut.</p>
+                <a href="{% url 'klasifikasi' %}" class="btn mt-3">Coba FItur</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container mb-5 mt-5">
+        <div class="row">
+            <div class="col-md-6 col-lg-6 col-xl-6 align-self-center mt-5 mb-5">
+                <h1 class="fw-bold mb-4">MOTIF BATIK</h1>
+                <p>Di dalam website ini memberikan banyak informasi tentang motif-motif batik yang ada di
+                    berbagai
+                    daerah. Mulai dari makna motif hingga filosofi yang terkandung dalam motif batik
+                    tersebut. Jadi Kamu
+                    bisa lebih mengenal tentang batik.</p>
+                <a href="{% url 'motif_batik' %}" class="btn mt-3">Lihat Motif</a>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-6 text-center align-self-center" id="motif-right">
+                <img src="{% static 'assets/images/data_storage.png' %}" alt="" id="img-motif">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
